@@ -1,0 +1,20 @@
+{
+  "name": "snipy snips",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "go",
+        "path": "./go.json"
+      },
+      {
+        "language": [
+          "typescript",
+          "javascript",
+          "typescriptreact",
+          "javascriptreact"
+        ],
+        "path": "./ts.json"
+      }
+    ]
+  }
+}

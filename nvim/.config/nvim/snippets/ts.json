@@ -1,0 +1,10 @@
+{
+  "import mui": {
+    "prefix": "imui",
+    "body": ["import ${1} from \"@mui/material/${1}\""]
+  },
+  "cv": {
+    "prefix": "cv",
+    "body": ["console.log(\"${1}:\", ${1})"]
+  }
+}

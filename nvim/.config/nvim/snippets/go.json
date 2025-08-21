@@ -1,0 +1,10 @@
+{
+  "if error": {
+    "prefix": "ie",
+    "body": ["if err != nil {\n\t${1}\n}"]
+  },
+  "fmt helper": {
+    "prefix": "fmth",
+    "body": ["fmt.Println(\"${1} > \", ${1})"]
+  }
+}
