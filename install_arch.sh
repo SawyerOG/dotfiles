@@ -5,9 +5,9 @@ set -euo pipefail
 trap 'echo "Error on line $LINENO"; exit 1' ERR
 
 # Ensure required commands exist
-for cmd in sudo pacman git ssh-keygen; do
-  command -v $cmd >/dev/null 2>&1 || { echo "Missing required command: $cmd"; exit 1; }
-done
+#for cmd in sudo pacman git ssh-keygen; do
+#  command -v $cmd >/dev/null 2>&1 || { echo "Missing required command: $cmd"; exit 1; }
+#done
 
 # Prompt for Git configuration
 read -rp "Enter your Git username: " GIT_USERNAME
@@ -18,8 +18,9 @@ sudo pacman -Syu --noconfirm
 
 echo "==> Installing packages..."
 sudo pacman -S --needed --noconfirm \
-  git stow hyprland hyprlock hypridle swaync neovim openssh \
-  ttf-jetbrains-mono wireplumber lazygit lazydocker go fastfetch wl-clipboard
+  git ghostty stow hyprland hyprlock hypridle swaync neovim openssh \
+  ttf-jetbrains-mono wireplumber wiremix lazygit lazydocker go fastfetch wl-clipboard \
+  waybar emptty
 
 echo "==> Setting up Chaotic-AUR..."
 sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
@@ -45,6 +46,10 @@ fi
 echo "==> Configuring Git..."
 git config --global user.name "$GIT_USERNAME"
 git config --global user.email "$GIT_EMAIL"
+
+for cmd in sudo ssh-keygen; do
+  command -v $cmd >/dev/null 2>&1 || { echo "Missing required command: $cmd"; exit 1; }
+done
 
 echo "==> Generating SSH key for $GIT_EMAIL..."
 mkdir -p ~/.ssh
