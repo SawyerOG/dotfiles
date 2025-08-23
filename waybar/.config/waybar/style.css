@@ -3,7 +3,7 @@
 
 * {
   background-color: @background;
-  color: @foreground;
+  /* color: @foreground; */
 
   border: none;
   border-radius: 0;
@@ -14,10 +14,12 @@
 
 .modules-left {
   margin-left: 8px;
+  color: @foreground;
 }
 
 .modules-right {
   margin-right: 8px;
+  color: @foreground;
 }
 
 #workspaces button {
@@ -28,7 +30,7 @@
 }
 
 #workspaces button.active {
-    color: #285577;
+    color: #D3869B;
 }
 
 #workspaces button.empty {
