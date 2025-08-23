@@ -22,6 +22,11 @@
   color: @foreground;
 }
 
+
+.modules-center {
+  color: @foreground;
+}
+
 #workspaces button {
   all: initial;
   padding: 0 6px;
