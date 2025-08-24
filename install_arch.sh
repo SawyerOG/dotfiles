@@ -20,7 +20,7 @@ echo "==> Installing packages..."
 sudo pacman -S --needed --noconfirm \
   git ghostty stow hyprland hyprlock hypridle swaync neovim openssh \
   ttf-jetbrains-mono wireplumber wiremix lazygit lazydocker go fastfetch wl-clipboard \
-  waybar emptty
+  waybar emptty unzip fd
 
 echo "==> Setting up Chaotic-AUR..."
 sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
