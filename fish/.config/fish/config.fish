@@ -15,8 +15,8 @@ function fish_prompt
     set -l cwd (prompt_pwd)
 
     # Optional: shorten home to ~
-    set cwd (string replace "$HOME" $cwd)
+    set cwd (string replace "$HOME" "~" $cwd)
 
     # Show prompt
-    echo -n "> $cwd "
+    echo -n "$cwd > "
 end
