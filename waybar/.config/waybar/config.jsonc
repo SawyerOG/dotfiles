@@ -5,14 +5,14 @@
   "spacing": 0,
   "height": 26,
   "modules-left": [
-    "custom/omarchy",
+    "custom/power",
     "hyprland/workspaces"
   ],
   "modules-center": [
     "clock"
   ],
   "modules-right": [
-    "group/tray-expander",
+    // "group/tray-expander",
     // "bluetooth",
     "network",
     "pulseaudio",
@@ -44,10 +44,11 @@
     //   "5": []
     // }
   },
-  "custom/omarchy": {
+  "custom/power": {
     "format": "",
-    "on-click": "omarchy-menu",
-    "tooltip-format": "Omarchy Menu\n\nSuper + Alt + Space"
+    "on-click": "~/.config/tofi/power.sh",
+    // "tooltip-format": "Omarchy Menu\n\nSuper + Alt + Space"
+    "tooltip": false
   },
   // "custom/update": {
   //   "format": "",
@@ -59,7 +60,7 @@
   "cpu": {
     "interval": 5,
     "format": "󰍛",
-    "on-click": "alacritty -e btop"
+    "on-click": "ghostty -e btop"
   },
   "clock": {
     "format": "{:%A %H:%M}",
@@ -78,7 +79,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "nospacing": 1,
-    "on-click": "alacritty --class=Impala -e impala"
+    "on-click": "ghostty --class=Impala -e impala"
   },
   // "battery": {
   //   "format": "{capacity}% {icon}",
@@ -140,21 +141,21 @@
       "default": ["", "", ""]
     }
   },
-  "group/tray-expander": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 600,
-      "children-class": "tray-group-item"
-    },
-    "modules": [
-      "custom/expand-icon",
-      "tray"
-    ]
-  },
-  "custom/expand-icon": {
-    "format": " ",
-    "tooltip": false
-  },
+  // "group/tray-expander": {
+  //   "orientation": "inherit",
+  //   "drawer": {
+  //     "transition-duration": 600,
+  //     "children-class": "tray-group-item"
+  //   },
+  //   "modules": [
+  //     "custom/expand-icon",
+  //     "tray"
+  //   ]
+  // },
+  // "custom/expand-icon": {
+  //   "format": " ",
+  //   "tooltip": false
+  // },
   "tray": {
     "icon-size": 12,
     "spacing": 12
