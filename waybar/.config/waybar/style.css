@@ -1,5 +1,5 @@
-@define-color foreground #d3c6aa;
-@define-color background #2d353b;
+/* @define-color foreground #d3c6aa; */
+/* @define-color background #2d353b; */
 
 * {
   background-color: @background;
@@ -14,28 +14,28 @@
 
 .modules-left {
   margin-left: 8px;
-  color: @foreground;
 }
 
 .modules-right {
   margin-right: 8px;
-  color: @foreground;
+  color: red;
 }
-
 
 .modules-center {
   color: @foreground;
 }
 
 #workspaces button {
-  all: initial;
+  all: unset;
   padding: 0 6px;
   margin: 0 1.5px;
   min-width: 9px;
+  /* color: @foreground; */
 }
 
-#workspaces button.active {
-    color: #D3869B;
+#workspaces button.active,
+#workspaces button.focused {
+  color: #d3869b;
 }
 
 #workspaces button.empty {
@@ -50,7 +50,9 @@
 #pulseaudio,
 #clock,
 #custom-notification,
-#custom-power{
+#custom-power,
+#custom-tray,
+#custom-vpn {
   min-width: 12px;
   margin: 0 7.5px;
 }

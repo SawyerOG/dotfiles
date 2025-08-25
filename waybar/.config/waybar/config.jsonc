@@ -12,13 +12,14 @@
     "clock"
   ],
   "modules-right": [
-    // "group/tray-expander",
+    "group/tray-expander",
     // "bluetooth",
+    // "custom/vpn",
     "network",
     "pulseaudio",
     "cpu",
-    "custom/notification"
-    // "battery"
+    "custom/notification",
+    "battery"
   ],
   "hyprland/workspaces": {
     "on-click": "activate",
@@ -79,30 +80,30 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "nospacing": 1,
-    "on-click": "ghostty --class=Impala -e impala"
+    // "on-click": "ghostty --class=Impala -e impala"
   },
-  // "battery": {
-  //   "format": "{capacity}% {icon}",
-  //   "format-discharging": "{icon}",
-  //   "format-charging":    "{icon}",
-  //   "format-plugged":     "",
-  //   "format-icons": {
-  //     "charging": [
-  //       "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"
-  //     ],
-  //     "default": [
-  //       "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
-  //     ]
-  //   },
-  //   "format-full": "󰂅",
-  //   "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
-  //   "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
-  //   "interval": 5,
-  //   "states": {
-  //     "warning": 20,
-  //     "critical": 10
-  //   }
-  // },
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-discharging": "{icon}",
+    "format-charging":    "{icon}",
+    "format-plugged":     "",
+    "format-icons": {
+      "charging": [
+        "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"
+      ],
+      "default": [
+        "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
+      ]
+    },
+    "format-full": "󰂅",
+    "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+    "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+    "interval": 5,
+    "states": {
+      "warning": 20,
+      "critical": 10
+    }
+  },
   // "bluetooth": {
   //   "format": "",
   //   "format-disabled": "󰂲",
@@ -141,22 +142,29 @@
       "default": ["", "", ""]
     }
   },
-  // "group/tray-expander": {
-  //   "orientation": "inherit",
-  //   "drawer": {
-  //     "transition-duration": 600,
-  //     "children-class": "tray-group-item"
-  //   },
-  //   "modules": [
-  //     "custom/expand-icon",
-  //     "tray"
-  //   ]
-  // },
-  // "custom/expand-icon": {
-  //   "format": " ",
-  //   "tooltip": false
-  // },
+  "group/tray-expander": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "tray-group-item"
+    },
+    "modules": [
+      "custom/expand-icon",
+      "tray"
+    ]
+  },
+  "custom/expand-icon": {
+    "format": " ",
+    "tooltip": false
+  },
+// "custom/vpn": {
+//     "format": "{}",
+//     "exec": "/home/so/.config/vpn/status",
+//     "interval": 2,
+//     "on-click": "/home/so/.config/vpn/toggle"
+// },
   "tray": {
+    "enable": true,
     "icon-size": 12,
     "spacing": 12
   }
