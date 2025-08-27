@@ -157,12 +157,6 @@
     "format": " ",
     "tooltip": false
   },
-// "custom/vpn": {
-//     "format": "{}",
-//     "exec": "/home/so/.config/vpn/status",
-//     "interval": 2,
-//     "on-click": "/home/so/.config/vpn/toggle"
-// },
   "tray": {
     "enable": true,
     "icon-size": 12,
