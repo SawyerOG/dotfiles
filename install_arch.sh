@@ -18,10 +18,13 @@ sudo pacman -Syu --noconfirm
 
 echo "==> Installing packages..."
 sudo pacman -S --needed --noconfirm \
-  git ghostty stow hyprland hyprlock hypridle swaync neovim openssh \
+  git ghostty stow hyprland hyprlock hypridle hyprsunset hypershot swaync neovim openssh \
   ttf-jetbrains-mono wireplumber wiremix lazygit lazydocker go fastfetch wl-clipboard \
   waybar emptty unzip fd ripgrep networkmanager networkmanager-openconnect openconnect \
-  network-manager-applet libreoffice-fresh noto-fonts noto-fonts-emoji ttf-dejavu ttf-liberation
+  network-manager-applet libreoffice-fresh noto-fonts noto-fonts-emoji ttf-dejavu ttf-liberation \
+  grim slurp
+
+# also need noto fonts
 
 echo "==> Setting up Chaotic-AUR..."
 sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
