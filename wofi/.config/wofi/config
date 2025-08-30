@@ -1,0 +1,12 @@
+show=drun
+prompt=Search…
+insensitive=true
+allow-images=true
+term=kitty
+hide-scroll=true
+width=40%
+height=30%
+no-actions=true
+location=center
+orientation=vertical
+font=/usr/share/fonts/TTF/JetBrainsMonoNerdFont-Regular.ttf:12
