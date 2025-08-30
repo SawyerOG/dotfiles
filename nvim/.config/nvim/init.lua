@@ -24,16 +24,29 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup {
   "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
   {
-    "ribru17/bamboo.nvim",
+    "neanias/everforest-nvim",
+    version = false,
     lazy = false,
-    priority = 1000,
+    priority = 1000, -- make sure to load this before all the other start plugins
+    -- Optional; default configuration will be used if setup isn't called.
     config = function()
-      require("bamboo").setup {
-        -- optional configuration here
+      require("everforest").setup {
+        backgroung = "hard",
       }
-      require("bamboo").load()
+      require("everforest").load()
     end,
   },
+  -- {
+  --   "ribru17/bamboo.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require("bamboo").setup {
+  --       -- optional configuration here
+  --     }
+  --     require("bamboo").load()
+  --   end,
+  -- },
 
   require "plugins.debug",
   -- require "plugins.indent_line",
