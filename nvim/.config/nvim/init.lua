@@ -22,20 +22,38 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup {
-  "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
   {
-    "neanias/everforest-nvim",
-    version = false,
+    "sainnhe/everforest",
     lazy = false,
-    priority = 1000, -- make sure to load this before all the other start plugins
-    -- Optional; default configuration will be used if setup isn't called.
+    priority = 1000,
     config = function()
-      require("everforest").setup {
-        backgroung = "hard",
-      }
-      require("everforest").load()
+      -- Optionally configure and load the colorscheme
+      -- directly inside the plugin declaration.
+      vim.g.everforest_enable_italic = true
+      vim.g.everforest_background = "hard"
+      vim.g.everforest_ui_contrast = "high"
+      vim.g.everforest_diagnostic_text_highlight = 1
+      vim.g.everforest_diagnostic_line_highlight = 1
+      vim.g.everforest_diagnostic_virtual_text = "highlighted"
+      vim.g.everforest_cursor = "green"
+      vim.cmd.colorscheme "everforest"
     end,
   },
+
+  -- {
+  --   -- "neanias/everforest-nvim",
+  --   "sainnhe/everforest",
+  --   version = false,
+  --   lazy = false,
+  --   priority = 1000, -- make sure to load this before all the other start plugins
+  --   -- Optional; default configuration will be used if setup isn't called.
+  --   config = function()
+  --     require("everforest").setup {
+  --       background = "hard",
+  --     }
+  --     require("everforest").load()
+  --   end,
+  -- },
   -- {
   --   "ribru17/bamboo.nvim",
   --   lazy = false,
@@ -48,6 +66,7 @@ require("lazy").setup {
   --   end,
   -- },
 
+  "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
   require "plugins.debug",
   -- require "plugins.indent_line",
   require "plugins.lint",

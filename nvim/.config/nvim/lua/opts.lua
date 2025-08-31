@@ -5,12 +5,12 @@ vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
 
 --  For more options, you can see `:help option-list`
-opt.guicursor = {
-  "n-sm:block",
-  "v:hor50",
-  "c-ci-cr-i-ve:ver10",
-  "o-r:hor50",
-}
+-- opt.guicursor = {
+--   "n-sm:block",
+--   "v:hor50",
+--   "c-ci-cr-i-ve:ver10",
+--   "o-r:hor50",
+-- }
 
 opt.swapfile = false
 opt.termguicolors = true
@@ -18,7 +18,7 @@ vim.o.pumheight = 15
 vim.o.conceallevel = 0
 opt.number = true
 opt.relativenumber = true
-opt.mouse = "a"
+opt.mouse = "v"
 opt.showmode = false
 vim.schedule(function()
   opt.clipboard = "unnamedplus"
@@ -27,7 +27,7 @@ opt.breakindent = true
 opt.undofile = true
 opt.ignorecase = true
 opt.smartcase = true
-opt.signcolumn = 'yes'
+opt.signcolumn = "yes"
 opt.updatetime = 300
 opt.timeoutlen = 300
 opt.splitright = true
