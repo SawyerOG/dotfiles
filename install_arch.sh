@@ -18,11 +18,11 @@ sudo pacman -Syu --noconfirm
 
 echo "==> Installing packages..."
 sudo pacman -S --needed --noconfirm \
-  git ghostty stow hyprland hyprlock hypridle hyprsunset hypershot swaync neovim openssh \
+  git fish ghostty stow hyprland hyprlock hypridle hyprsunset hypershot swaync neovim openssh \
   ttf-jetbrains-mono wireplumber wiremix lazygit lazydocker go fastfetch wl-clipboard \
   waybar emptty unzip fd ripgrep networkmanager networkmanager-openconnect openconnect \
   network-manager-applet libreoffice-fresh noto-fonts noto-fonts-emoji ttf-dejavu ttf-liberation \
-  grim slurp
+  grim slurp yazi
 
 # also need noto fonts
 
@@ -65,10 +65,6 @@ fi
 # Start SSH agent and add key
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
-
-# Copy SSH key to clipboard
-wl-copy < ~/.ssh/id_ed25519.pub
-echo "SSH public key generated and copied to clipboard!"
 
 echo
 echo "======================================================"
