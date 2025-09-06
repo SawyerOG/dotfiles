@@ -18,7 +18,6 @@ vim.o.pumheight = 15
 vim.o.conceallevel = 0
 opt.number = true
 opt.relativenumber = true
-opt.mouse = "v"
 opt.showmode = false
 vim.schedule(function()
   opt.clipboard = "unnamedplus"
