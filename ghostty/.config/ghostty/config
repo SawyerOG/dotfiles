@@ -1,8 +1,10 @@
-#cursor-color = #DCD7BA
 font-size = 10
 font-family = JetBrainsMono Nerd Font
 #theme = kanagawabones
 theme = "Everforest Dark - Hard"
 
+cursor-style = block
+shell-integration-features = no-cursor
+term=xterm-256color
 gtk-tabs-location = bottom
 adw-toolbar-style = flat
