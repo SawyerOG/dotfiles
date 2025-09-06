@@ -88,6 +88,7 @@ require("lazy").setup {
   require "plugins.flash",
   require "plugins.autotag",
   require "plugins.snacks",
+  require "plugins.dadbod",
   -- require "plugins.avante",
   -- require "plugins.trouble",
   -- require "plugins.noice",
