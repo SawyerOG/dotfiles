@@ -16,6 +16,7 @@ services:
       retries: 5
     networks:
       - shared_net
+      - dagster_network
 
   pgadmin:
     image: dpage/pgadmin4:9.3
@@ -33,5 +34,7 @@ services:
       - shared_net
 
 networks:
+  dagster_network:
+    external: true
   shared_net:
     external: true

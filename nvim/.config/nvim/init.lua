@@ -44,7 +44,7 @@ require("lazy").setup {
   --   -- "neanias/everforest-nvim",
   --   "sainnhe/everforest",
   --   version = false,
-  --   lazy = false,
+  --   lazy = false,dadbod
   --   priority = 1000, -- make sure to load this before all the other start plugins
   --   -- Optional; default configuration will be used if setup isn't called.
   --   config = function()
@@ -52,7 +52,7 @@ require("lazy").setup {
   --       background = "hard",
   --     }
   --     require("everforest").load()
-  --   end,
+  --   end,dadbod
   -- },
   -- {
   --   "ribru17/bamboo.nvim",
@@ -89,6 +89,7 @@ require("lazy").setup {
   require "plugins.autotag",
   require "plugins.snacks",
   require "plugins.dadbod",
+  -- require "plugins.tinyinline",
   -- require "plugins.avante",
   -- require "plugins.trouble",
   -- require "plugins.noice",
