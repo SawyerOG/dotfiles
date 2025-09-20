@@ -29,7 +29,7 @@ return {
         sections = {
           lualine_a = { "mode" },
           lualine_b = { "branch" },
-          lualine_c = { "diagnostics", "filename" },
+          lualine_c = { "diagnostics", { "filename", path = 1 } },
           lualine_x = { "filesize", "fileformat", "filetype" },
           lualine_y = {},
           lualine_z = { "location" },
