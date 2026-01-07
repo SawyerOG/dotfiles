@@ -2,7 +2,11 @@ return {
   "kristijanhusak/vim-dadbod-ui",
   dependencies = {
     { "tpope/vim-dadbod", lazy = true },
-    { "kristijanhusak/vim-dadbod-completion", ft = { "plsql", "sql" }, lazy = true },
+    {
+      "kristijanhusak/vim-dadbod-completion",
+      ft = { "sql", "plsql" },
+      lazy = true,
+    },
   },
   cmd = {
     "DBUI",
@@ -17,22 +21,26 @@ return {
       local_thrive = "postgres://admin:password@localhost:5432/thrive",
       pasco_dev = "postgres://admin:password@10.91.98.6:5433/pasco_dev",
 
-      -- sqlserver = "sqlserver://nodeuser:password@10.91.97.8:1436",
+      ecco = "sqlserver://nodeuser:password@10.91.97.8:1436/ecco",
+      therap = "sqlserver://nodeuser:password@10.91.97.8:1436/therap",
+      ops = "sqlserver://nodeuser:password@10.91.97.8:1436/ops",
     }
   end,
   config = function()
-    -- Enable completion inside SQL buffers
+    -- Force vim-dadbod-ui columns to 80 chars
     vim.api.nvim_create_autocmd("FileType", {
-      pattern = { "sql", "plsql" },
+      pattern = "dbui",
       callback = function()
-        local ok, cmp = pcall(require, "cmp")
-        if ok then
-          cmp.setup.buffer {
-            sources = {
-              { name = "vim-dadbod-completion" },
-              { name = "buffer" },
-            },
-          }
+        -- Wrap the original render function
+        local dbui = require "db_ui.view.table"
+        local original_render = dbui.render_row
+
+        dbui.render_row = function(row, col_widths, ...)
+          -- Force every column width to 80
+          for i = 1, #col_widths do
+            col_widths[i] = 80
+          end
+          return original_render(row, col_widths, ...)
         end
       end,
     })
