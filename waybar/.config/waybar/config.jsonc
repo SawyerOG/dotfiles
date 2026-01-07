@@ -13,8 +13,7 @@
   ],
   "modules-right": [
     "group/tray-expander",
-    // "bluetooth",
-    // "custom/vpn",
+    "bluetooth",
     "network",
     "pulseaudio",
     "cpu",
@@ -104,13 +103,13 @@
       "critical": 10
     }
   },
-  // "bluetooth": {
-  //   "format": "",
-  //   "format-disabled": "󰂲",
-  //   "format-connected": "",
-  //   "tooltip-format": "Devices connected: {num_connections}",
-  //   "on-click": "blueberry"
-  // },
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "󰂲",
+    "format-connected": "",
+    "tooltip-format": "Devices connected: {num_connections}",
+    "on-click": "blueberry"
+  },
     "custom/notification": {
     "tooltip": false,
     "format": "{} {icon}",
