@@ -22,30 +22,13 @@ sudo pacman -S --needed --noconfirm \
   ttf-jetbrains-mono wireplumber wiremix lazygit lazydocker go fastfetch wl-clipboard \
   waybar emptty unzip fd ripgrep networkmanager networkmanager-openconnect openconnect \
   network-manager-applet libreoffice-fresh noto-fonts noto-fonts-emoji ttf-dejavu ttf-liberation \
-  grim slurp yazi
+  grim slurp yazi brave
+
+# virtual machine
+# sudo pacman -S qemu-full virt-manager libvirt dnsmasq bridge-utils \
+ #            edk2-ovmf vde2 openbsd-netcat
 
 # also need noto fonts
-
-echo "==> Setting up Chaotic-AUR..."
-sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
-sudo pacman-key --lsign-key 3056513887B78AEB
-
-sudo pacman -U --noconfirm \
-  'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' \
-  'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
-
-# Add Chaotic-AUR repo if not already present
-if ! grep -q "^\[chaotic-aur\]" /etc/pacman.conf; then
-  echo -e "\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist" | sudo tee -a /etc/pacman.conf
-fi
-
-echo "==> Syncing and updating..."
-sudo pacman -Syu --noconfirm
-
-echo "==> Installing Brave..."
-if ! pacman -Qi brave-bin &>/dev/null; then
-  sudo pacman -S --noconfirm chaotic-aur/brave-bin
-fi
 
 echo "==> Configuring Git..."
 git config --global user.name "$GIT_USERNAME"
