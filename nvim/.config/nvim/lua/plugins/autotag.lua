@@ -1,5 +1,5 @@
 return {
   "windwp/nvim-ts-autotag",
-  ft = { "typescriptreact" },
+  dependencies = { "nvim-treesitter/nvim-treesitter" },
   opts = {},
 }

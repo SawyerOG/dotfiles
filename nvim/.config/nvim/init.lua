@@ -11,6 +11,12 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "lua", "python", "javascript", "typescript", "typescriptreact", "go", "markdown" },
+  callback = function() vim.treesitter.start() end,
+})
+
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -22,17 +28,17 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup {
-  -- {
-  --   "rebelot/kanagawa.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {
-  --     compile = true,
-  --   },
-  --   config = function()
-  --     vim.cmd.colorscheme "kanagawa"
-  --   end,
-  -- },
+  {
+    "rebelot/kanagawa.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      compile = true,
+    },
+    config = function()
+      vim.cmd.colorscheme "kanagawa"
+    end,
+  },
 
   -- {
   --   "sainnhe/everforest",
@@ -56,7 +62,7 @@ require("lazy").setup {
   --   -- "neanias/everforest-nvim",
   --   "sainnhe/everforest",
   --   version = false,
-  --   lazy = false,dadbod
+  --   lazy = false,
   --   priority = 1000, -- make sure to load this before all the other start plugins
   --   -- Optional; default configuration will be used if setup isn't called.
   --   config = function()
@@ -64,19 +70,19 @@ require("lazy").setup {
   --       background = "hard",
   --     }
   --     require("everforest").load()
-  --   end,dadbod
+  --   end,
   -- },
-  {
-    "ribru17/bamboo.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require("bamboo").setup {
-        style = "multiplex", -- Choose between 'vulgaris' (regular), 'multiplex' (greener), and 'light'
-      }
-      require("bamboo").load()
-    end,
-  },
+  -- {
+  --   "ribru17/bamboo.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require("bamboo").setup {
+  --       style = "multiplex", -- Choose between 'vulgaris' (regular), 'multiplex' (greener), and 'light'
+  --     }
+  --     require("bamboo").load()
+  --   end,
+  -- },
 
   "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
   require "plugins.debug",

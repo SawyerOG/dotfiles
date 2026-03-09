@@ -1,9 +1,9 @@
 return {
   {
     'HiPhish/rainbow-delimiters.nvim',
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-    },
+    -- dependencies = {
+    --   'nvim-treesitter/nvim-treesitter',
+    -- },
     lazy = true,
     event = "BufReadPre", -- this will only start session saving when an actual file was opened
     config = function()
