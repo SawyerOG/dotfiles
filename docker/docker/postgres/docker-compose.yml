@@ -5,7 +5,8 @@ services:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
     volumes:
-      - /home/so/docker/postgres/data/postgres:/var/lib/postgresql/data
+      - pgadmin_data:/var/lib/postgresql/data
+      # - /home/so/docker/postgres/data/postgres:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     # restart: unless-stopped
@@ -14,9 +15,9 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-    networks:
-      - shared_net
-      - dagster_network
+    # networks:
+    #   - shared_net
+    #   - dagster_network
 
   pgadmin:
     image: dpage/pgadmin4:9.3
@@ -24,17 +25,21 @@ services:
       PGADMIN_DEFAULT_EMAIL: admin@pgadmin.com
       PGADMIN_DEFAULT_PASSWORD: password
     volumes:
-      - /home/so/docker/postgres/data/pgadmin:/var/lib/pgadmin
+      - postgres_data:/var/lib/pgadmin
+      # - /home/so/docker/postgres/data/pgadmin:/var/lib/pgadmin
     ports:
       - "5050:80"
     depends_on:
       - postgres
     # restart: unless-stopped
-    networks:
-      - shared_net
+    # networks:
+    #   - shared_net
 
-networks:
-  dagster_network:
-    external: true
-  shared_net:
-    external: true
+volumes:
+  pgadmin_data:
+  postgres_data:
+# networks:
+  # dagster_network:
+  #   external: true
+  # shared_net:
+  #   external: true
