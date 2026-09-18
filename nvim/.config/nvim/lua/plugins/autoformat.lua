@@ -38,16 +38,16 @@ return {
         -- python = { "isort", "black" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
-        javascript = { "prettierd" },
-        typescript = { "prettierd" },
-        javascriptreact = { "prettierd" },
-        typescriptreact = { "prettierd" },
-        json = { "prettierd" },
-        markdown = { "prettierd" },
-        css = { "prettierd" },
-        html = { "prettierd" },
-        yaml = { "prettierd" },
-        yml = { "prettierd" },
+        javascript = { "prettier" },
+        typescript = { "prettier" },
+        javascriptreact = { "prettier" },
+        typescriptreact = { "prettier" },
+        json = { "prettier" },
+        markdown = { "prettier" },
+        css = { "prettier" },
+        html = { "prettier" },
+        yaml = { "prettier" },
+        yml = { "prettier" },
         python = {
           -- To fix auto-fixable lint errors.
           "ruff_fix",
