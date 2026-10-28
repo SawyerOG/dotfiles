@@ -46,7 +46,8 @@ return {
     "gopls",
     "tsc",
     "ruff",
-    "pyright"
+    "pyright",
+    "oxlint",
     -- "tsgo"
     -- "vtsls"
   })

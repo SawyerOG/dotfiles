@@ -1,6 +1,7 @@
 require "opts"
 require "keymaps"
 require "functions.floaterm"
+require("custom.todo").setup()
 
 --  See `:help lua-guide-autocommands`
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -87,8 +88,7 @@ require("lazy").setup {
   "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
   require "plugins.debug",
   -- require "plugins.indent_line",
-  require "plugins.lint",
-  require "plugins.diffview",
+  require "plugins.codediff",
   -- require "plugins.autopairs",
   -- require "plugins.neo-tree",
   require "plugins.gitsigns",
@@ -108,6 +108,7 @@ require("lazy").setup {
   require "plugins.autotag",
   require "plugins.snacks",
   require "plugins.markdown",
+  require "plugins.atlas",
   -- require "plugins.dadbod",
   -- require "plugins.tinyinline",
   -- require "plugins.avante",
