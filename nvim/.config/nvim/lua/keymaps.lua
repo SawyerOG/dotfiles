@@ -23,7 +23,7 @@ vim.keymap.set("n", "<leader>b", "<cmd> enew <CR>", opts) -- new buffer
 
 -- Window management
 vim.keymap.set("n", "<leader>v", "<C-w>v", opts)      -- split window vertically
-vim.keymap.set("n", "<leader>h", "<C-w>s", opts)      -- split window horizontally
+-- vim.keymap.set("n", "<leader>h", "<C-w>s", opts)      -- split window horizontally
 vim.keymap.set("n", "<leader>se", "<C-w>=", opts)     -- make split windows equal width & height
 vim.keymap.set("n", "<leader>xs", ":close<CR>", opts) -- close current split window
 
@@ -80,3 +80,4 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 vim.keymap.set("n", "<leader>xx", ":source %", { desc = "save and run the current lua file" })
 
 vim.keymap.set("v", "<C-d>", 'y:.,$s/<C-r>"//gc<Left><Left><Left>', { noremap = true })
+vim.keymap.set("n", "<leader>xf", ":%!python -c 'import sys, xml.dom.minidom; print(xml.dom.minidom.parseString(sys.stdin.read()).toprettyxml())'", { desc = "format xml document" })
